@@ -11,7 +11,7 @@ export default function AuthButton() {
       <>
         <Link href="/write" className="text-purple-600 font-medium">Viết bài</Link>
         <img src={session.user?.image ?? ""} className="w-8 h-8 rounded-full" />
-        <h3>Chao mung {session.user?.name}</h3>
+        <h3 className="text-purple-500 text-sm">Chao mung {session.user?.name}</h3>
         <button onClick={() => signOut()} className="text-red-500 text-sm">Đăng xuất</button>
       </>
     )
