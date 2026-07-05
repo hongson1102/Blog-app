@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/prisma"
 import { redirect } from "next/navigation"
+import { revalidatePath } from "next/cache"
 
 export async function createPost(formData: FormData) {
   const title = formData.get("title") as string
@@ -18,6 +19,6 @@ export async function createPost(formData: FormData) {
       authorId: user.id
     }
   })
-
+  revalidatePath("/")
   redirect("/")
 }
