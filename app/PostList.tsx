@@ -9,7 +9,7 @@ export default async function PostList() {
 
   return (
     <div className="space-y-4">
-      {posts.map(post => (
+      {posts.map((post: any) => (
         <Link key={post.id} href={`/posts/${post.id}`}>
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
             <h3 className="text-xl font-bold mb-2">{post.title}</h3>
